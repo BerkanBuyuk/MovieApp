@@ -24,7 +24,7 @@ function App() {
 }
 
 const headerStyle = {
-  title: 'Movie App',
+  title: "Movie App",
   headerStyle: {backgroundColor: Constants.baseColor},
   headerTitleStyle: {color: Constants.textColor},
   headerLeft: () => <Icon name="menu" size={34} color={Constants.textColor} />,
