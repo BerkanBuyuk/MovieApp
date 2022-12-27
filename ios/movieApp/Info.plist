@@ -26,6 +26,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Entypo.ttf</string>
 		<string>Ionicons.ttf</string>
 	</array>
 	<key>NSAppTransportSecurity</key>

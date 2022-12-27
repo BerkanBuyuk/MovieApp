@@ -1,11 +1,11 @@
-import {SafeAreaView, View, Text} from 'react-native';
 import React, {useEffect, useState} from 'react';
+import {View} from 'react-native';
 import {GET} from '../Services/API';
 import {SliderBox} from 'react-native-image-slider-box';
 import {IMAGE_POSTER_URL} from '../config';
 import Constants from '../Constants';
 
-const DiscoverMovies = () => {
+const DiscoverMovies = props => {
   const [movies, setMovies] = useState([]);
   const [images, setImages] = useState([]);
 
@@ -30,9 +30,18 @@ const DiscoverMovies = () => {
   }, []);
 
   return (
-    <SafeAreaView>
-      <SliderBox images={images} dotColor={Constants.secondaryColor} />
-    </SafeAreaView>
+    <View>
+      <SliderBox
+        images={images}
+        dotColor={Constants.dotcolor}
+        inactiveDotColor={Constants.inactiveDotColor}
+        autoplay
+        circleLoop
+        onCurrentImagePressed={index =>
+          props.navigation.navigate('movieDetails', {movieId: movies[index].id})
+        }
+      />
+    </View>
   );
 };
 
