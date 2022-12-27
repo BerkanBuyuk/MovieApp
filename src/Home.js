@@ -1,11 +1,13 @@
-import {View, Text} from 'react-native';
+import {View, SafeAreaView, Text} from 'react-native';
 import React from 'react';
+import DiscoverMovies from './Components/DiscoverMovies';
+import Styles from "./Styles"
 
 const Home = () => {
   return (
-    <View>
-      <Text>Home</Text>
-    </View>
+    <SafeAreaView style={Styles.sectionBg}>
+      <DiscoverMovies />
+    </SafeAreaView>
   );
 };
 
