@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from './src/Home';
@@ -9,6 +9,7 @@ import MovieDetails from './src/Components/MovieDetails';
 const Stack = createNativeStackNavigator();
 
 function App() {
+  
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerTitleAlign: 'center'}}>
@@ -24,7 +25,7 @@ function App() {
 }
 
 const headerStyle = {
-  title: "Movie App",
+  title: 'Movie App',
   headerStyle: {backgroundColor: Constants.baseColor},
   headerTitleStyle: {color: Constants.textColor},
   headerLeft: () => <Icon name="menu" size={34} color={Constants.textColor} />,
