@@ -13,7 +13,7 @@ import {GET} from '../Services/API';
 import Styles from '../Styles';
 import Loader from './Loader';
 
-const TrendingMovies = props => {
+const SimilarMovies = props => {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState();
 
@@ -28,7 +28,7 @@ const TrendingMovies = props => {
   }, []);
 
   return (
-    <SafeAreaView style={{bottom: Platform.OS === 'android' ? 25 : 0}}>
+    <SafeAreaView style={{bottom: Platform.OS === 'android' ? 5 : 30}}>
       {loading ? (
         <Loader />
       ) : (
@@ -55,11 +55,11 @@ const displayMovies = ({item}, props) => {
       style={{marginHorizontal: 10}}>
       <Image
         source={{uri: `${POSTER_IMAGE}${item.poster_path}`}}
-        style={Styles.posterImage}
+        style={Styles.similarMoviesPosterImage}
       />
-      <Text style={Styles.movieTitle}>{item.original_title}</Text>
+      <Text style={Styles.similarMovieTitle}>{item.original_title}</Text>
     </TouchableOpacity>
   );
 };
 
-export default TrendingMovies;
+export default SimilarMovies;

@@ -6,6 +6,7 @@ import {
   Linking,
   TouchableOpacity,
   ScrollView,
+  SafeAreaView,
 } from 'react-native';
 import {IMAGE_POSTER_URL} from '../config';
 import {GET} from '../Services/API';
@@ -13,8 +14,8 @@ import Styles from '../Styles';
 import Loader from './Loader';
 import Icon from 'react-native-vector-icons/Entypo';
 import Constants from '../Constants';
-import TrendingMovies from './TrendingMovies';
 import TrendingPeople from './TrendingPeople';
+import SimilarMovies from './SimilarMovies';
 
 const MovieDetails = props => {
   const [loading, setLoading] = useState(true);
@@ -39,6 +40,7 @@ const MovieDetails = props => {
   };
 
   return (
+    <SafeAreaView>
     <ScrollView style={Styles.sectionBg}>
       {loading ? (
         <Loader />
@@ -93,14 +95,15 @@ const MovieDetails = props => {
             isForPage="details"
           />
 
-          <TrendingMovies
-            title="SIMILAR MOVIES"
-            navigation={props.navigation}
-            url={`/movie/${props.route.params.movieId}/similar`}
+          <SimilarMovies
+          title="SIMILAR MOVIES"
+          navigation={props.navigation}
+          url={`/movie/${props.route.params.movieId}/similar`}
           />
         </View>
       )}
     </ScrollView>
+    </SafeAreaView>
   );
 };
 

@@ -34,9 +34,21 @@ const Styles = StyleSheet.create({
     width: 150,
     borderRadius: 10,
   },
+  similarMoviesPosterImage: {
+    height: 100,
+    width: 100,
+    borderRadius: 10
+  },
   movieTitle: {
     color: Constants.textColor,
     width: 150,
+    textAlign: 'center',
+    marginTop: 5,
+    fontSize: 16,
+  },
+  similarMovieTitle: {
+    color: Constants.textColor,
+    width: 100,
     textAlign: 'center',
     marginTop: 5,
     fontSize: 16,
