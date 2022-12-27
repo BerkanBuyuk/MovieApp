@@ -383,10 +383,14 @@ PODS:
     - React-jsi (= 0.70.6)
     - React-logger (= 0.70.6)
     - React-perflogger (= 0.70.6)
+  - ReactNativeLocalization (2.3.1):
+    - React-Core
   - RNFastImage (8.6.3):
     - React-Core
     - SDWebImage (~> 5.11.1)
     - SDWebImageWebPCoder (~> 0.8.4)
+  - RNLocalize (2.2.4):
+    - React-Core
   - RNScreens (3.18.2):
     - React-Core
     - React-RCTImage
@@ -463,7 +467,9 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - ReactNativeLocalization (from `../node_modules/react-native-localization`)
   - RNFastImage (from `../node_modules/react-native-fast-image`)
+  - RNLocalize (from `../node_modules/react-native-localize`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -558,8 +564,12 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  ReactNativeLocalization:
+    :path: "../node_modules/react-native-localization"
   RNFastImage:
     :path: "../node_modules/react-native-fast-image"
+  RNLocalize:
+    :path: "../node_modules/react-native-localize"
   RNScreens:
     :path: "../node_modules/react-native-screens"
   RNVectorIcons:
@@ -616,7 +626,9 @@ SPEC CHECKSUMS:
   React-RCTVibration: c75ceef7aa60a33b2d5731ebe5800ddde40cefc4
   React-runtimeexecutor: 15437b576139df27635400de0599d9844f1ab817
   ReactCommon: 349be31adeecffc7986a0de875d7fb0dcf4e251c
+  ReactNativeLocalization: 076497d7ca70341c751cd3b3e7c86187332a182d
   RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
+  RNLocalize: 0df7970cfc60389f00eb62fd7c097dc75af3fb4f
   RNScreens: 34cc502acf1b916c582c60003dc3089fa01dc66d
   RNVectorIcons: fcc2f6cb32f5735b586e66d14103a74ce6ad61f8
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
