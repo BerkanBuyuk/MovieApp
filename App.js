@@ -9,7 +9,6 @@ import MovieDetails from './src/Components/MovieDetails';
 const Stack = createNativeStackNavigator();
 
 function App() {
-  
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerTitleAlign: 'center'}}>
