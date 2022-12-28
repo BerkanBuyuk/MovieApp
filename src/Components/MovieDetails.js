@@ -41,68 +41,70 @@ const MovieDetails = props => {
 
   return (
     <SafeAreaView>
-    <ScrollView style={Styles.sectionBg}>
-      {loading ? (
-        <Loader />
-      ) : (
-        <View>
+      <ScrollView style={Styles.sectionBg}>
+        {loading ? (
+          <Loader />
+        ) : (
           <View>
-            <Image
-              source={{uri: `${IMAGE_POSTER_URL}${details.backdrop_path}`}}
-              style={Styles.imageBg}
+            <View>
+              <Image
+                source={{uri: `${IMAGE_POSTER_URL}${details.backdrop_path}`}}
+                style={Styles.imageBg}
+              />
+            </View>
+            <Text style={Styles.detailsMovieTitle}>
+              {details.original_title}
+            </Text>
+            {details.homepage ? (
+              <View style={Styles.linkContainer}>
+                <TouchableOpacity
+                  onPress={() => {
+                    Linking.openURL(details.homepage);
+                  }}>
+                  <Icon name="link" color={Constants.textColor} size={22} />
+                </TouchableOpacity>
+              </View>
+            ) : null}
+
+            <Text style={Styles.heading}>OVERVIEW</Text>
+            <Text style={Styles.overview}>{details.overview}</Text>
+
+            <View style={Styles.detailsContainer}>
+              <View>
+                <Text style={Styles.heading}>BUDGET</Text>
+                <Text style={Styles.details}>$ {details.budget}</Text>
+              </View>
+
+              <View>
+                <Text style={Styles.heading}>DURATION</Text>
+                <Text style={Styles.details}>{details.runtime} min.</Text>
+              </View>
+
+              <View>
+                <Text style={Styles.heading}>RELEASE DATE</Text>
+                <Text style={Styles.details}>{details.release_date}</Text>
+              </View>
+            </View>
+
+            <Text style={Styles.heading}>GENRE</Text>
+            <View style={{display: 'flex', flexDirection: 'row'}}>
+              {getGenre()}
+            </View>
+
+            <TrendingPeople
+              title="CAST"
+              url={`/movie/${props.route.params.movieId}/credits`}
+              isForPage="details"
+            />
+
+            <SimilarMovies
+              title="SIMILAR MOVIES"
+              navigation={props.navigation}
+              url={`/movie/${props.route.params.movieId}/similar`}
             />
           </View>
-          <Text style={Styles.detailsMovieTitle}>{details.original_title}</Text>
-          {details.homepage ? (
-            <View style={Styles.linkContainer}>
-              <TouchableOpacity
-                onPress={() => {
-                  Linking.openURL(details.homepage);
-                }}>
-                <Icon name="link" color={Constants.textColor} size={22} />
-              </TouchableOpacity>
-            </View>
-          ) : null}
-
-          <Text style={Styles.heading}>OVERVIEW</Text>
-          <Text style={Styles.overview}>{details.overview}</Text>
-
-          <View style={Styles.detailsContainer}>
-            <View>
-              <Text style={Styles.heading}>BUDGET</Text>
-              <Text style={Styles.details}>$ {details.budget}</Text>
-            </View>
-
-            <View>
-              <Text style={Styles.heading}>DURATION</Text>
-              <Text style={Styles.details}>{details.runtime} min.</Text>
-            </View>
-
-            <View>
-              <Text style={Styles.heading}>RELEASE DATE</Text>
-              <Text style={Styles.details}>{details.release_date}</Text>
-            </View>
-          </View>
-
-          <Text style={Styles.heading}>GENRE</Text>
-          <View style={{display: 'flex', flexDirection: 'row'}}>
-            {getGenre()}
-          </View>
-
-          <TrendingPeople
-            title="CAST"
-            url={`/movie/${props.route.params.movieId}/credits`}
-            isForPage="details"
-          />
-
-          <SimilarMovies
-          title="SIMILAR MOVIES"
-          navigation={props.navigation}
-          url={`/movie/${props.route.params.movieId}/similar`}
-          />
-        </View>
-      )}
-    </ScrollView>
+        )}
+      </ScrollView>
     </SafeAreaView>
   );
 };
